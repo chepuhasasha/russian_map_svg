@@ -1,5 +1,6 @@
 const fs = require('fs');
 const cheerio = require('cheerio');
+const SvgPath = require('svgpath');
 const { kdTree } = require('kd-tree-javascript');
 
 if (process.argv.length < 3) {
@@ -12,59 +13,96 @@ const svgContent = fs.readFileSync(inputFile, 'utf8');
 const $ = cheerio.load(svgContent, { xmlMode: true });
 
 const paths = $('path');
-const allPoints = [];
-const pathTokens = [];
-let pointId = 0;
-
-const tokenRegex = /([AaCcHhLlMmQqSsTtVvZz]|-?\d*\.?\d+(?:e[-+]?\d+)?)/g;
-const commandRegex = /^[AaCcHhLlMmQqSsTtVvZz]$/;
+const points = [];
+const pathObjs = [];
+let id = 0;
 
 paths.each((pIndex, elem) => {
   const d = $(elem).attr('d');
-  const tokens = d.match(tokenRegex) || [];
-  pathTokens[pIndex] = tokens;
-  for (let i = 0; i < tokens.length - 1; i++) {
-    if (!commandRegex.test(tokens[i]) && !commandRegex.test(tokens[i + 1])) {
-      const x = parseFloat(tokens[i]);
-      const y = parseFloat(tokens[i + 1]);
-      if (!isNaN(x) && !isNaN(y)) {
-        allPoints.push({ x, y, pathIndex: pIndex, i1: i, i2: i + 1, id: pointId++ });
-        i++; // move to next pair
-      }
+  const sp = new SvgPath(d).abs();
+  pathObjs[pIndex] = { sp, elem };
+  sp.iterate((seg, idx, startX, startY) => {
+    let x = startX;
+    let y = startY;
+    let pxIdx = null;
+    let pyIdx = null;
+    switch (seg[0]) {
+      case 'M':
+      case 'L':
+      case 'T':
+        pxIdx = 1;
+        pyIdx = 2;
+        x = seg[1];
+        y = seg[2];
+        break;
+      case 'H':
+        pxIdx = 1;
+        x = seg[1];
+        y = startY;
+        break;
+      case 'V':
+        pyIdx = 1;
+        x = startX;
+        y = seg[1];
+        break;
+      case 'C':
+        pxIdx = 5;
+        pyIdx = 6;
+        x = seg[5];
+        y = seg[6];
+        break;
+      case 'S':
+        pxIdx = 3;
+        pyIdx = 4;
+        x = seg[3];
+        y = seg[4];
+        break;
+      case 'Q':
+        pxIdx = 3;
+        pyIdx = 4;
+        x = seg[3];
+        y = seg[4];
+        break;
+      case 'A':
+        pxIdx = 6;
+        pyIdx = 7;
+        x = seg[6];
+        y = seg[7];
+        break;
+      default:
+        return;
     }
-  }
+    points.push({ x, y, pathIndex: pIndex, seg, pxIdx, pyIdx, id: id++ });
+  });
 });
 
-// build kd-tree
 const dist = (a, b) => Math.pow(a.x - b.x, 2) + Math.pow(a.y - b.y, 2);
-const tree = new kdTree(allPoints, dist, ['x', 'y']);
-const threshold = 0.5; // distance threshold to merge
+const tree = new kdTree(points, dist, ['x', 'y']);
+const threshold = 0.3;
 
-for (const point of allPoints) {
-  const neighbours = tree.nearest(point, 2);
-  for (const [other, d2] of neighbours) {
-    if (other.id === point.id) continue;
-    if (point.pathIndex === other.pathIndex) continue;
-    if (other.id < point.id) continue; // avoid double processing
-    const distance = Math.sqrt(d2);
-    if (distance < threshold) {
-      const mx = (point.x + other.x) / 2;
-      const my = (point.y + other.y) / 2;
-      // update tokens
-      pathTokens[point.pathIndex][point.i1] = mx.toFixed(2);
-      pathTokens[point.pathIndex][point.i2] = my.toFixed(2);
-      pathTokens[other.pathIndex][other.i1] = mx.toFixed(2);
-      pathTokens[other.pathIndex][other.i2] = my.toFixed(2);
-    }
+for (const p of points) {
+  const neighbours = tree.nearest(p, 2);
+  if (neighbours.length < 2) continue;
+  const [other, d2] = neighbours[1];
+  if (other.pathIndex === p.pathIndex) continue;
+  const distance = Math.sqrt(d2);
+  if (distance < threshold) {
+    const mx = (p.x + other.x) / 2;
+    const my = (p.y + other.y) / 2;
+    if (p.pxIdx !== null) p.seg[p.pxIdx] = mx;
+    if (p.pyIdx !== null) p.seg[p.pyIdx] = my;
+    if (other.pxIdx !== null) other.seg[other.pxIdx] = mx;
+    if (other.pyIdx !== null) other.seg[other.pyIdx] = my;
+    p.x = mx; p.y = my;
+    other.x = mx; other.y = my;
   }
 }
 
-// write new svg
-paths.each((i, elem) => {
-  const newD = pathTokens[i].join(' ');
+paths.each((pIndex, elem) => {
+  const sp = pathObjs[pIndex].sp;
+  const newD = sp.toString();
   $(elem).attr('d', newD);
 });
 
 fs.writeFileSync('output.svg', $.xml());
 console.log('Saved to output.svg');
-
