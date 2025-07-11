@@ -1,0 +1,330 @@
+[
+  {
+    "region": "Республика Адыгея",
+    "file": "respublika_adygeya.svg"
+  },
+  {
+    "region": "Республика Алтай",
+    "file": "respublika_altay.svg"
+  },
+  {
+    "region": "Республика Бурятия",
+    "file": "respublika_buryatiya.svg"
+  },
+  {
+    "region": "Республика Башкортостан",
+    "file": "respublika_bashkortostan.svg"
+  },
+  {
+    "region": "Республика Дагестан",
+    "file": "respublika_dagestan.svg"
+  },
+  {
+    "region": "Республика Ингушетия",
+    "file": "respublika_ingushetiya.svg"
+  },
+  {
+    "region": "Республика Калмыкия",
+    "file": "respublika_kalmykiya.svg"
+  },
+  {
+    "region": "Республика Карелия",
+    "file": "respublika_kareliya.svg"
+  },
+  {
+    "region": "Республика Коми",
+    "file": "respublika_komi.svg"
+  },
+  {
+    "region": "Республика Крым",
+    "file": "respublika_krym.svg"
+  },
+  {
+    "region": "Республика Марий Эл",
+    "file": "respublika_mariy_el.svg"
+  },
+  {
+    "region": "Республика Мордовия",
+    "file": "respublika_mordoviya.svg"
+  },
+  {
+    "region": "Республика Саха (Якутия)",
+    "file": "respublika_saha_yakutiya.svg"
+  },
+  {
+    "region": "Республика Татарстан",
+    "file": "respublika_tatarstan.svg"
+  },
+  {
+    "region": "Республика Тыва",
+    "file": "respublika_tyva.svg"
+  },
+  {
+    "region": "Республика Хакасия",
+    "file": "respublika_hakasiya.svg"
+  },
+  {
+    "region": "Чеченская Республика",
+    "file": "chechenskaya_respublika.svg"
+  },
+  {
+    "region": "Алтайский край",
+    "file": "altayskiy_kray.svg"
+  },
+  {
+    "region": "Камчатский край",
+    "file": "kamchatskiy_kray.svg"
+  },
+  {
+    "region": "Забайкальский край",
+    "file": "zabaykalskiy_kray.svg"
+  },
+  {
+    "region": "Краснодарский край",
+    "file": "krasnodarskiy_kray.svg"
+  },
+  {
+    "region": "Красноярский край",
+    "file": "krasnoyarskiy_kray.svg"
+  },
+  {
+    "region": "Пермский край",
+    "file": "permskiy_kray.svg"
+  },
+  {
+    "region": "Приморский край",
+    "file": "primorskiy_kray.svg"
+  },
+  {
+    "region": "Ставропольский край",
+    "file": "stavropolskiy_kray.svg"
+  },
+  {
+    "region": "Амурская область",
+    "file": "amurskaya_oblast.svg"
+  },
+  {
+    "region": "Хабаровский край",
+    "file": "habarovskiy_kray.svg"
+  },
+  {
+    "region": "Архангельская область",
+    "file": "arhangelskaya_oblast.svg"
+  },
+  {
+    "region": "Астраханская область",
+    "file": "astrahanskaya_oblast.svg"
+  },
+  {
+    "region": "Белгородская область",
+    "file": "belgorodskaya_oblast.svg"
+  },
+  {
+    "region": "Брянская область",
+    "file": "bryanskaya_oblast.svg"
+  },
+  {
+    "region": "Владимирская область",
+    "file": "vladimirskaya_oblast.svg"
+  },
+  {
+    "region": "Волгоградская область",
+    "file": "volgogradskaya_oblast.svg"
+  },
+  {
+    "region": "Вологодская область",
+    "file": "vologodskaya_oblast.svg"
+  },
+  {
+    "region": "Воронежская область",
+    "file": "voronezhskaya_oblast.svg"
+  },
+  {
+    "region": "Ивановская область",
+    "file": "ivanovskaya_oblast.svg"
+  },
+  {
+    "region": "Иркутская область",
+    "file": "irkutskaya_oblast.svg"
+  },
+  {
+    "region": "Калининградская область",
+    "file": "kaliningradskaya_oblast.svg"
+  },
+  {
+    "region": "Калужская область",
+    "file": "kaluzhskaya_oblast.svg"
+  },
+  {
+    "region": "Кемеровская область — Кузбасс",
+    "file": "kemerovskaya_oblast_kuzbass.svg"
+  },
+  {
+    "region": "Кировская область",
+    "file": "kirovskaya_oblast.svg"
+  },
+  {
+    "region": "Костромская область",
+    "file": "kostromskaya_oblast.svg"
+  },
+  {
+    "region": "Курганская область",
+    "file": "kurganskaya_oblast.svg"
+  },
+  {
+    "region": "Курская область",
+    "file": "kurskaya_oblast.svg"
+  },
+  {
+    "region": "Ленинградская область",
+    "file": "leningradskaya_oblast.svg"
+  },
+  {
+    "region": "Липецкая область",
+    "file": "lipeckaya_oblast.svg"
+  },
+  {
+    "region": "Магаданская область",
+    "file": "magadanskaya_oblast.svg"
+  },
+  {
+    "region": "Московская область",
+    "file": "moskovskaya_oblast.svg"
+  },
+  {
+    "region": "Мурманская область",
+    "file": "murmanskaya_oblast.svg"
+  },
+  {
+    "region": "Нижегородская область",
+    "file": "nizhegorodskaya_oblast.svg"
+  },
+  {
+    "region": "Новгородская область",
+    "file": "novgorodskaya_oblast.svg"
+  },
+  {
+    "region": "Новосибирская область",
+    "file": "novosibirskaya_oblast.svg"
+  },
+  {
+    "region": "Омская область",
+    "file": "omskaya_oblast.svg"
+  },
+  {
+    "region": "Оренбургская область",
+    "file": "orenburgskaya_oblast.svg"
+  },
+  {
+    "region": "Орловская область",
+    "file": "orlovskaya_oblast.svg"
+  },
+  {
+    "region": "Пензенская область",
+    "file": "penzenskaya_oblast.svg"
+  },
+  {
+    "region": "Псковская область",
+    "file": "pskovskaya_oblast.svg"
+  },
+  {
+    "region": "Рязанская область",
+    "file": "ryazanskaya_oblast.svg"
+  },
+  {
+    "region": "Ростовская область",
+    "file": "rostovskaya_oblast.svg"
+  },
+  {
+    "region": "Самарская область",
+    "file": "samarskaya_oblast.svg"
+  },
+  {
+    "region": "Саратовская область",
+    "file": "saratovskaya_oblast.svg"
+  },
+  {
+    "region": "Сахалинская область",
+    "file": "sahalinskaya_oblast.svg"
+  },
+  {
+    "region": "Свердловская область",
+    "file": "sverdlovskaya_oblast.svg"
+  },
+  {
+    "region": "Смоленская область",
+    "file": "smolenskaya_oblast.svg"
+  },
+  {
+    "region": "Тамбовская область",
+    "file": "tambovskaya_oblast.svg"
+  },
+  {
+    "region": "Тверская область",
+    "file": "tverskaya_oblast.svg"
+  },
+  {
+    "region": "Томская область",
+    "file": "tomskaya_oblast.svg"
+  },
+  {
+    "region": "Тульская область",
+    "file": "tulskaya_oblast.svg"
+  },
+  {
+    "region": "Тюменская область",
+    "file": "tyumenskaya_oblast.svg"
+  },
+  {
+    "region": "Ульяновская область",
+    "file": "ulyanovskaya_oblast.svg"
+  },
+  {
+    "region": "Челябинская область",
+    "file": "chelyabinskaya_oblast.svg"
+  },
+  {
+    "region": "Ярославская область",
+    "file": "yaroslavskaya_oblast.svg"
+  },
+  {
+    "region": "Москва",
+    "file": "moskva.svg"
+  },
+  {
+    "region": "Санкт-Петербург",
+    "file": "sankt_peterburg.svg"
+  },
+  {
+    "region": "Севастополь",
+    "file": "sevastopol.svg"
+  },
+  {
+    "region": "Еврейская автономная область",
+    "file": "evreyskaya_avtonomnaya_oblast.svg"
+  },
+  {
+    "region": "Ненецкий автономный округ",
+    "file": "neneckiy_avtonomnyy_okrug.svg"
+  },
+  {
+    "region": "Ханты-Мансийский автономный округ — Югра",
+    "file": "hanty_mansiyskiy_avtonomnyy_okrug_yugra.svg"
+  },
+  {
+    "region": "Чукотский автономный округ",
+    "file": "chukotskiy_avtonomnyy_okrug.svg"
+  },
+  {
+    "region": "Ямало-Ненецкий автономный округ",
+    "file": "yamalo_neneckiy_avtonomnyy_okrug.svg"
+  },
+  {
+    "region": "Запорожская область",
+    "file": "zaporozhskaya_oblast.svg"
+  },
+  {
+    "region": "Херсонская область",
+    "file": "hersonskaya_oblast.svg"
+  }
+]
